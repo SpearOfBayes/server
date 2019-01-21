@@ -3,12 +3,12 @@
   <title>贝叶斯之矛：商品智能分类</title>
   <!-- 引入 Bootstrap -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/css/font-awesome.min.css" rel="stylesheet">
-  <link href="static/css/SpearOfBayes.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/SpearOfBayes.css" rel="stylesheet">
   <!--引入jquery-->
   <!--script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"-->
   <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="static/js/SpearOfBayes.js"></script>
+  <script src="./assets/js/SpearOfBayes.js"></script>
 </head>
 <body>
     <!--下面是网页上方的横幅-->
@@ -16,7 +16,7 @@
       <headder>
         <div>
           <div>
-            <img src="static/images/logo.png"  alt="SpearOfBayes">
+            <img src="assets/images/logo.png"  alt="SpearOfBayes">
           </div>
           <!--<span class="group_name">SpearOfBayes</span>-->
           <!--右上角导航栏-->
@@ -45,7 +45,7 @@
               <div>
                 <ul class="nav">
                   <li class="nav-item">
-                    <div id="left1" class="active_module">
+                    <div id="single_query_module" class="active_module">
                       <a>
                         <i id="lIcon1" class="fa fa-paper-plane"></i>
                         <span id="lWord1"  class="module_font">单个查询</span>
@@ -53,7 +53,7 @@
                     </div>
                   </li>
                   <li class="nav-item">
-                    <div id="left2" class="module">
+                    <div id="batch_query_module" class="module">
                       <a>
                         <i id="lIcon2"  class="fa fa-paper-plane-o"></i>
                         <span id="lWord2" class="module_font">批量查询</span>
@@ -61,7 +61,7 @@
                     </div>
                   </li>
                   <li class="nav-item">
-                    <div id="left3" class="module">
+                    <div id="model_insight_module" class="module">
                       <a>
                         <i id="lIcon3" class="fa fa-search-plus"></i>
                         <span id="lWord3" class="module_font">可视化模型</span>
@@ -69,7 +69,7 @@
                     </div>
                   </li>
                   <li class="nav-item">
-                    <div id="left4" class="module" >
+                    <div id="parameters_module" class="module" >
                       <a>
                         <i id="lIcon4"  class="fa fa-line-chart"></i>
                         <span id="lWord4" class="module_font">训练参数</span>
@@ -82,40 +82,6 @@
             <!---->
             <!--右侧放置主要内容的的窗口-->
             <div class="main_window" id="main_window">
-              <!--主窗体-->
-              <div class="center">
-                <!--顶部预留一个筛选栏-->
-                <div>
-
-                </div>
-                <!---->
-                <!--用于放置搜索内容的窗体-->
-                <div class="center">
-                  <!--应当放在中偏上的位置-->
-                  <div class="single_query">
-                    <!--可以放一些图片之类的-->
-                    <div>
-                    </div>
-                    <!--单个搜索框和按钮，应当设置为横向排列-->
-                    <table>
-                      <tr>
-                        <th>
-                          <div class="search_text">
-                            <input id="text_content" type="text" name="commodity" placeholder="输入商品名，如“冬暖夏凉空调被”" style="width:420px;height:100%">
-                          </div>
-                        </th>
-                        <th>
-                          <div class="search_button">
-                            <button id="button_1" type="button" class="btn btn-info btn-sm" style="height:92%;width:90px;font-size:16px;margin:2px">
-                              查  询
-                            </button>
-                          </div>
-                        </th>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
