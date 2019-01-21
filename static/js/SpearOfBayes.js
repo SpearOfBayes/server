@@ -34,8 +34,8 @@ $(document).ready(function(){
 			"commoditys": commodity_name
 		}
 		$.post(
-			"/batch_query/",
-			JSON.stringify(data),
+			"/batch_query/",//url
+			{data:JSON.stringify(data)},//data
 			function(response) {
 				alert(response);
 		})
