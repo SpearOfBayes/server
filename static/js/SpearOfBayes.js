@@ -31,17 +31,13 @@ $(document).ready(function(){
 	//提交查询请求
 	function submit_query(commodity_name) {
 		data = {
-			"data": {
-				"commoditys": commodity_name
-			}
+			"commoditys": commodity_name
 		}
-		$.ajax({
-			type: "POST",
-			url: "/batch_query/",
-			data: JSON.stringify(data),
-			success: function(response) {
+		$.post(
+			"/batch_query/",
+			JSON.stringify(data),
+			function(response) {
 				alert(response);
-			}
 		})
 	}
 
