@@ -8,10 +8,10 @@ $(document).ready(function(){
 
 	// 单个查询函数
 	function single_query() {
-		commodity_name = $("#commodity_text")[0].value
-		alert(commodity_name)
+		commodity_name = $("#commodity_text")[0].value;
+		alert(commodity_name);
 		
-		submit_query(commodity_name)
+		submit_query(commodity_name, single_query_on_success);
 	}
 
 	//批量查询函数
@@ -23,13 +23,13 @@ $(document).ready(function(){
 			}
 			commoditys.push($(this).val());
 		})
-		commoditys_name = commoditys.join(",")
-		alert(commoditys_name)
-		submit_query(commoditys_name)
+		commoditys_name = commoditys.join(",");
+		alert(commoditys_name);
+		submit_query(commoditys_name, batch_query_on_success);
 	}
 
 	//提交查询请求
-	function submit_query(commodity_name) {
+	function submit_query(commodity_name, success) {
 		data = {
 			"commoditys": commodity_name
 		}
@@ -37,7 +37,25 @@ $(document).ready(function(){
 			"/batch_query/",//url
 			{data:JSON.stringify(data)},//data
 			function(response) {
-				alert(response);
+				success(response)//成功以后要执行的函数
+			}
+		)
+	}
+
+	function single_query_on_success(response) {
+		ret = JSON.parse(response);
+		$("#commodity_text")[0].value = ret["ret_class"];
+	}
+
+	function batch_query_on_success(response) {
+		classes = JSON.parse(response)['ret_class'].split(',');
+		var i = 0;
+		$(".commodity_name").each(function() {
+			if (i >= classes.length) {
+				return false;
+			}
+			$(this).val() = classes[i]
+			i = i + 1;
 		})
 	}
 
