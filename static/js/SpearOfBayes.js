@@ -31,7 +31,9 @@ $(document).ready(function(){
 	//提交查询请求
 	function submit_query(commodity_name) {
 		data = {
-			"commoditys": commodity_name
+			"data": {
+				"commoditys": commodity_name
+			}
 		}
 		$.ajax({
 			type: "POST",
