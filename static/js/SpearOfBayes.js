@@ -35,7 +35,7 @@ $(document).ready(function(){
 		}
 		$.ajax({
 			type: "POST",
-			url: "localhost/batch_query",
+			url: "/batch_query/",
 			data: JSON.stringify(data),
 			success: function(response) {
 				alert(response);
